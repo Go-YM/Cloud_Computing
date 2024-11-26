@@ -1,5 +1,20 @@
 import boto3
-from botocore.exceptions import NoCredentialsError, PartialCredentialsError
+from botocore.exceptions import WaiterError
+
+access_key=""
+secret_key =""
+global ec2
+global resource
+global ssm
+
+def init_aws():
+    global ec2
+    global resource
+    global ssm
+
+    ec2 = boto3.client('ec2',aws_access_key_id=access_key,aws_secret_access_key=secret_key,region_name="us-west-1")
+    ssm = boto3.client('ssm',aws_access_key_id=access_key,aws_secret_access_key=secret_key,region_name="us-west-1")
+    resource = boto3.resource('ec2',aws_access_key_id=access_key,aws_secret_access_key=secret_key,region_name="us-west-1")
 
 def list_instances(ec2):
     print("Listing instances...")
