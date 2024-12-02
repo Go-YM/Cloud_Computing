@@ -152,7 +152,6 @@ if __name__ == "__main__":
             listImages()
 
         elif num == 99:
-            print("bye!")
             exit(0)
         else:
             print("concertration!")
