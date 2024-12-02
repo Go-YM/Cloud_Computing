@@ -40,7 +40,7 @@ def availableZones():
         done=True
 
 def startInstance(id):
-    print("Starting .... %s" % id)
+    print("Starting ... %s" % id)
     done= False
     while done==False:
         res=ec2.start_instances(InstanceIds=[id])
@@ -61,7 +61,7 @@ def availableRegions():
         done=True
 
 def stopInstance(id):
-    print("Stopping .... %s" % id)
+    print("Stopping ... %s" % id)
     done= False
     while done==False:
         res=ec2.stop_instances(InstanceIds=[id])
@@ -81,7 +81,7 @@ def createInstance(id):
         done=True
 
 def rebootInstance(id):
-    print("Rebooting .... %s" % id)
+    print("Rebooting ... %s" % id)
     done= False
     while done==False:
         res=ec2.reboot_instances(InstanceIds=[id])
@@ -91,7 +91,7 @@ def rebootInstance(id):
         done=True
 
 def listImages():
-    print("Listing images ....")
+    print("Listing images ...")
     done = False
     while done==False:
         res=ec2.describe_images(Filters=[{'Name':'name','Values':['aws-htcondor-slave']}])
