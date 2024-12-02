@@ -9,7 +9,6 @@ global resource
 global ssm
 
 def init_aws():
-    #AWS SDK module init
     global ec2
     global resource
     global ssm
